@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="root"></div>
+    <script>
+
+        /*
+            创建一个按钮，可以显示按钮的点击次数
+         */
+      const Root = {
+          data(){
+
+              return{
+                  count:0 //记录点击次数
+              }
+          },
+
+          template:'<button @click="count++">点击</button> -- 点了{{count}}次' //希望组件在页面中呈现的样子
+      }
+
+
+      Vue.createApp(Root).mount('#root')
+    </script>
+</body>
+</html>

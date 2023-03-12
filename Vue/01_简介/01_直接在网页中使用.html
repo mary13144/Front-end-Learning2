@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="root"></div>
+    <script>
+      //编写vue代码
+      //组件开发思想，创建一个根组件，在vue3中组件就是一个普通的js对象
+      //组件用来创建组件实例，组件是组件实例的模版
+      //组件--> 组件生成组件实例 -->虚拟DOM -->DOM (在页面中呈现)
+      const Root = {
+          template:'<h1>我爱vue</h1>' //希望组件在页面中呈现的样子
+      }
+      //创建app实例
+      // const app = Vue.createApp(Root)
+      //将实例在页面中挂载
+      // app.mount("#root")
+
+      Vue.createApp(Root).mount('#root')
+    </script>
+</body>
+</html>

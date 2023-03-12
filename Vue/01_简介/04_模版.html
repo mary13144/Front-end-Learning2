@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <!--
+        如果直接将模版定义到网页中，此时模版必须符合html的规范
+            如果在组件中没有定义template，会使用根元素的innerHTML作为模版使用
+            如果在组件中定义了template，则会优先使用template作为模版
+                同时根元素中的所有内容都会被替换
+    -->
+    <button @click="count++">点击</button> -- 点了{{count}}次
+</div>
+<script>
+
+    const Root = {
+        data(){
+
+            return{
+                count:0 //记录点击次数
+            }
+        },
+        /*
+            template 是模版，它决定了组件最终的样子
+            定义模版的方式有三种:
+                1. 在组件中通过template属性去指定
+                2. 直接在网页的根元素中去指定
+                3. 组件中通过render()直接渲染
+         */
+        // template:'<button @click="count++">点击</button> -- 点了{{count}}次' //希望组件在页面中呈现的样子
+    }
+
+
+    Vue.createApp(Root).mount('#root')
+</script>
+</body>
+</html>
